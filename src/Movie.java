@@ -24,6 +24,12 @@ public class Movie {
       return _title;
   }
 
+  public int getFrequentRenterPoints(int daysRented){
+      if ((_priceCode == Movie.NEW_RELEASE) && daysRented > 1)
+          return 2;
+      return 1;
+  }
+
   public double getCharge(int daysRented){
       double thisAmount = 0;
       switch (_priceCode) {
